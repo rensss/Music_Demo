@@ -7,8 +7,9 @@ target 'Music' do
   use_frameworks!
 
   # Pods for Music
-  pod 'R_category'
+  pod 'R_category', '0.0.8'
   pod 'Moya', '13.0.1'
   pod 'Kingfisher', '5.7.1'
+  pod 'SnapKit'
   
 end
