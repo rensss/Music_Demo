@@ -8,7 +8,7 @@
 import Foundation
 
 struct Mv: Codable {
-	var id: Int
+	var id: String
 	var title: String
 	var img_url: String
 	var duration: Int

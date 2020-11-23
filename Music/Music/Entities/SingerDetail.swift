@@ -8,7 +8,7 @@
 import Foundation
 
 struct SingerDetail: Codable {
-	var playlist_id: Int
+	var playlist_id: String
 	var playlist_name: String
 	var playlist_img_url: String
 	var mv_total_count: Int

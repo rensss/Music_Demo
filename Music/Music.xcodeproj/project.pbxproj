@@ -11,7 +11,7 @@
 		1A6C8E98256756DB00D5F480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6C8E96256756DB00D5F480 /* Main.storyboard */; };
 		1A6C8E9A256756DC00D5F480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6C8E99256756DC00D5F480 /* Assets.xcassets */; };
 		1A6C8E9D256756DC00D5F480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6C8E9B256756DC00D5F480 /* LaunchScreen.storyboard */; };
-		1A6C8EF125675E5700D5F480 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6C8EF025675E5700D5F480 /* NetworkConstants.swift */; };
+		1A6C8EF125675E5700D5F480 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6C8EF025675E5700D5F480 /* Network.swift */; };
 		1A6C8EF725675EA400D5F480 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6C8EF625675EA400D5F480 /* BaseTabBarViewController.swift */; };
 		1AAC82CD256A277100206A57 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82CC256A277100206A57 /* HomeViewController.swift */; };
 		1AAC82D1256A278300206A57 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82D0256A278300206A57 /* SettingViewController.swift */; };
@@ -32,7 +32,7 @@
 		1A6C8E99256756DC00D5F480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A6C8E9C256756DC00D5F480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A6C8E9E256756DC00D5F480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A6C8EF025675E5700D5F480 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		1A6C8EF025675E5700D5F480 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1A6C8EF625675EA400D5F480 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		1A6C8EFD25675EE600D5F480 /* Music-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Music-Bridging-Header.h"; sourceTree = "<group>"; };
 		1AAC82CC256A277100206A57 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		1A6C8EEC25675E3600D5F480 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1A6C8EF025675E5700D5F480 /* NetworkConstants.swift */,
+				1A6C8EF025675E5700D5F480 /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6C8EF125675E5700D5F480 /* NetworkConstants.swift in Sources */,
+				1A6C8EF125675E5700D5F480 /* Network.swift in Sources */,
 				1AAC82F4256A2D1000206A57 /* Mv.swift in Sources */,
 				1AAC82F1256A2CF400206A57 /* Singer.swift in Sources */,
 				1A6C8E91256756DB00D5F480 /* AppDelegate.swift in Sources */,
