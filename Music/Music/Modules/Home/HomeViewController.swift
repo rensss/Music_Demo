@@ -8,6 +8,9 @@
 import Foundation
 import SwiftyJSON
 
+
+let HomeCellIdentifier = "SingerTableViewCell"
+
 class HomeViewController: BaseViewController {
 	
 	var dataArray: Array<Any>?
@@ -16,6 +19,9 @@ class HomeViewController: BaseViewController {
 		super.viewDidLoad()
 		
 		getSingerData()
+        
+        view.addSubview(tableView)
+        tableView.autoPinEdgesToSuperviewEdges()
 	}
 	
 	// MARK:- func
@@ -33,7 +39,7 @@ class HomeViewController: BaseViewController {
                         do {
                             let singerItems = try decoder.decode([Singer].self, from: singer_items.data(using: .utf8)!)
                             self.dataArray = singerItems
-                            
+                            self.tableView.reloadData()
                         } catch {
                             debugPrint("---- \(error)")
                         }
@@ -48,6 +54,37 @@ class HomeViewController: BaseViewController {
 	}
 	
 	// MARK:- getter
-	
-	
+    lazy var tableView: UITableView = {
+        let t = UITableView()
+        t.delegate = self
+        t.dataSource = self
+        t.rowHeight = 50
+        t.backgroundColor = .clear
+        t.tableFooterView = UIView()
+        t.register(SingerTableViewCell.self, forCellReuseIdentifier: HomeCellIdentifier)
+        return t
+    }()
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeCellIdentifier, for: indexPath) as! SingerTableViewCell
+        cell.singer = self.dataArray?[indexPath.row] as? Singer
+        return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        debugPrint("---- \(indexPath)")
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let detailVC = SingerDetailViewController()
+        detailVC.singer = self.dataArray?[indexPath.row] as? Singer
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }

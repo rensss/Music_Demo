@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SingerTableViewCell: UITableViewCell {
     
@@ -16,6 +17,7 @@ class SingerTableViewCell: UITableViewCell {
         contentView.addSubview(coverImage)
         coverImage.autoAlignAxis(toSuperviewAxis: .horizontal)
         coverImage.autoPinEdge(toSuperviewEdge: .left, withInset: 15)
+        coverImage.autoSetDimensions(to: CGSize(width: 40, height: 40))
         
         contentView.addSubview(singerName)
         singerName.autoAlignAxis(toSuperviewAxis: .horizontal)
@@ -28,20 +30,21 @@ class SingerTableViewCell: UITableViewCell {
     
     // MARK:- Func
     
-    // MARK:- Other
-    
     // MARK:- Setter
     var singer: Singer? {
         didSet {
+            if let url = singer?.img_url, singer?.img_url.count ?? 0 > 0 {
+                coverImage.kf.setImage(with: URL(string: url), placeholder: nil)
+            }
+            
             singerName.text = singer?.name
         }
     }
     
-    
     // MARK:- LazyInit
     lazy var coverImage: UIImageView = {
         let cover = UIImageView()
-        cover.layer.cornerRadius = self.height/2
+        cover.layer.cornerRadius = 20
         cover.clipsToBounds = true
         return cover
     }()
