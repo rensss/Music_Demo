@@ -14,9 +14,10 @@ target 'Music' do
   pod 'Moya'#, '13.0.1'
   pod 'Kingfisher'#, '5.7.1'
   pod 'SnapKit', '5.0.1'
+  pod 'SDWebImage'#, '5.9.5'
   
 	# test
-	pod 'HandyJSON', '5.0.0'
-	pod 'SwiftyJSON', '5.0.0'
+	pod 'HandyJSON'#, '5.0.0'
+	pod 'SwiftyJSON'#, '5.0.0'
 	
 end

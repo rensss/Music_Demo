@@ -14,19 +14,23 @@ PODS:
   - PureLayout (3.1.6)
   - R_category (0.0.8)
   - Result (4.1.0)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
   - SnapKit (5.0.1)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - FMDB
-  - HandyJSON (= 5.0.0)
+  - HandyJSON
   - Kingfisher
   - MBProgressHUD
   - Moya
   - PureLayout
-  - R_category (= 0.0.8)
+  - R_category
+  - SDWebImage
   - SnapKit (= 5.0.1)
-  - SwiftyJSON (= 5.0.0)
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -39,6 +43,7 @@ SPEC REPOS:
     - PureLayout
     - R_category
     - Result
+    - SDWebImage
     - SnapKit
     - SwiftyJSON
 
@@ -52,9 +57,10 @@ SPEC CHECKSUMS:
   PureLayout: bd3c4ec3a3819ad387c99ebb72c6b129c3ed4d2d
   R_category: abb3d864d530f44cf61e6fa28a13ce11c044689d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1044a96981ec15bcd2620f84b50efc24189e7683
+PODFILE CHECKSUM: fbdb678742abbe8448c744f443e141fb182cd56a
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.3
