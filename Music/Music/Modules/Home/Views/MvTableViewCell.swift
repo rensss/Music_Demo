@@ -47,7 +47,7 @@ class MvTableViewCell: UITableViewCell {
             }
             
             title.text = mv?.title
-            mvDuration.text = Utils.getFormatTime(duration: mv?.duration ?? 0)
+            mvDuration.text = Utils.getFormatDuration(duration: mv?.duration ?? 0)
         }
     }
     

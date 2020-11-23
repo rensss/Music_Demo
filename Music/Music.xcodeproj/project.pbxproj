@@ -28,6 +28,8 @@
 		1AC68743256B9B360004B0B2 /* MvDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68742256B9B360004B0B2 /* MvDetailViewController.swift */; };
 		1AC68746256BA47F0004B0B2 /* SingerDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68745256BA47F0004B0B2 /* SingerDetailTableViewCell.swift */; };
 		1AC68749256BB4B40004B0B2 /* MvTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68748256BB4B40004B0B2 /* MvTableViewCell.swift */; };
+		1AC6874D256BBAE40004B0B2 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6874C256BBAE40004B0B2 /* BaseDao.swift */; };
+		1AC68751256BBB070004B0B2 /* PlaylistDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68750256BBB070004B0B2 /* PlaylistDao.swift */; };
 		6D81BDA87138DBEDA4D3345E /* Pods_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920A12C87729923C2B840C53 /* Pods_Music.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		1AC68742256B9B360004B0B2 /* MvDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvDetailViewController.swift; sourceTree = "<group>"; };
 		1AC68745256BA47F0004B0B2 /* SingerDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerDetailTableViewCell.swift; sourceTree = "<group>"; };
 		1AC68748256BB4B40004B0B2 /* MvTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvTableViewCell.swift; sourceTree = "<group>"; };
+		1AC6874C256BBAE40004B0B2 /* BaseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
+		1AC68750256BBB070004B0B2 /* PlaylistDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDao.swift; sourceTree = "<group>"; };
 		571536F6990AB945BDB979D9 /* Pods-Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music.debug.xcconfig"; path = "Target Support Files/Pods-Music/Pods-Music.debug.xcconfig"; sourceTree = "<group>"; };
 		920A12C87729923C2B840C53 /* Pods_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		936C1AB7EBACC512DAF042C5 /* Pods-Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music.release.xcconfig"; path = "Target Support Files/Pods-Music/Pods-Music.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			children = (
 				1A6C8EEC25675E3600D5F480 /* Network */,
 				1A6C8EEE25675E3600D5F480 /* Entities */,
+				1AC6874B256BBAD00004B0B2 /* Dao */,
 				1A6C8EED25675E3600D5F480 /* Modules */,
 				1A6C8EEF25675E3600D5F480 /* Utils */,
 				1A6C8E90256756DB00D5F480 /* AppDelegate.swift */,
@@ -185,6 +190,15 @@
 				1AC68748256BB4B40004B0B2 /* MvTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1AC6874B256BBAD00004B0B2 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				1AC6874C256BBAE40004B0B2 /* BaseDao.swift */,
+				1AC68750256BBB070004B0B2 /* PlaylistDao.swift */,
+			);
+			path = Dao;
 			sourceTree = "<group>";
 		};
 		A3395F345CEE58949C06E6C2 /* Pods */ = {
@@ -325,6 +339,8 @@
 				1AAC82F1256A2CF400206A57 /* Singer.swift in Sources */,
 				1A6C8E91256756DB00D5F480 /* AppDelegate.swift in Sources */,
 				1AC68746256BA47F0004B0B2 /* SingerDetailTableViewCell.swift in Sources */,
+				1AC68751256BBB070004B0B2 /* PlaylistDao.swift in Sources */,
+				1AC6874D256BBAE40004B0B2 /* BaseDao.swift in Sources */,
 				1AAC82E9256A2A1B00206A57 /* BaseNavViewController.swift in Sources */,
 				1A6C8EF725675EA400D5F480 /* BaseTabBarViewController.swift in Sources */,
 				1AAC82F8256A30D400206A57 /* BaseModel.swift in Sources */,
