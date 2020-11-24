@@ -12,7 +12,7 @@ let MvTableViewCellIdentifier = "MvTableViewCellIdentifier"
 
 class MvDetailViewController: BaseViewController {
     
-    var playlist: SingerDetail?
+    var playlist: Playlist?
     
     // MARK:- LifeCycle
     override func viewDidLoad() {

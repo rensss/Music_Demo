@@ -1,5 +1,5 @@
 //
-//  SingerDetail.swift
+//  Playlist.swift
 //  Music
 //
 //  Created by RZK on 2020/11/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SingerDetail: Codable {
+struct Playlist: Codable {
 	var playlist_id: String
 	var playlist_name: String
 	var playlist_img_url: String

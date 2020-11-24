@@ -7,7 +7,7 @@
 
 import UIKit
 
-let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/Music.db"
-class BaseDao {
-    let database: FMDatabase = FMDatabase(path: path)
+let dbPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/Music.db"
+struct BaseDao {
+    static let dbQueue: FMDatabaseQueue = FMDatabaseQueue(path: dbPath)!
 }

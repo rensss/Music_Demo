@@ -32,7 +32,7 @@ class SingerDetailTableViewCell: UITableViewCell {
     }
     
     // MARK:- Setter
-    var detail: SingerDetail? {
+    var detail: Playlist? {
         didSet {
             if let url = detail?.playlist_img_url, detail?.playlist_img_url.count ?? 0 > 0 {
                 coverImage.kf.setImage(with: URL(string: url), placeholder: nil, completionHandler:  { (result) in

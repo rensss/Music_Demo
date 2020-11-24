@@ -31,6 +31,14 @@ class HomeViewController: BaseViewController {
 		NetworkAPIRequest.request(.artist) { (result) in
             switch result {
             case .success(let response):
+                
+//                do {
+//                    let jsonResult = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+//                    debugPrint(jsonResult)
+//                } catch {
+//                    debugPrint("---- \(error)")
+//                }
+                
                 let jsonObj = try? JSON(data: response.data)
 //                debugPrint("RECEIPT RESULT: ", jsonObj as Any)
                 if let result = jsonObj?["result"].bool {

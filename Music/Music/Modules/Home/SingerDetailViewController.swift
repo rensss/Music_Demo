@@ -12,7 +12,7 @@ let SingerDatailCellIdentifier = "SingerDatailCellIdentifier"
 class SingerDetailViewController: BaseViewController {
     
     var singer: Singer?
-    var mvsArray: [SingerDetail]?
+    var mvsArray: [Playlist]?
     
     // MARK:- LifeCycle
     override func viewDidLoad() {
@@ -32,15 +32,24 @@ class SingerDetailViewController: BaseViewController {
             switch result {
             case .success(let response):
                 let jsonObj = try? JSON(data: response.data)
-                debugPrint(jsonObj)
+                debugPrint(jsonObj as Any)
                 // ["playlist_items"]
                 if let result = jsonObj?["result"].bool {
                     if result {
                         let playlist_items = jsonObj!["playlist_items"].rawString() ?? ""
                         let decoder = JSONDecoder()
                         do {
-                            let playlists = try decoder.decode([SingerDetail].self, from: playlist_items.data(using: .utf8)!)
+                            let playlists = try decoder.decode([Playlist].self, from: playlist_items.data(using: .utf8)!)
                             self.mvsArray = playlists
+                            
+                            for list in playlists {
+                                let result = PlaylistDao.addPlaylist(list: list)
+                                debugPrint(result)
+                            }
+                            
+                            let array = PlaylistDao.getAllPlaylist()
+                            debugPrint(array)
+                            
                             self.tableView.reloadData()
                             self.tableView.mj_header?.endRefreshing()
                         } catch {

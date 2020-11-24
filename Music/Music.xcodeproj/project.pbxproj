@@ -18,10 +18,9 @@
 		1AAC82D4256A279A00206A57 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82D3256A279A00206A57 /* BaseViewController.swift */; };
 		1AAC82E5256A29E700206A57 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82E4256A29E700206A57 /* Utils.swift */; };
 		1AAC82E9256A2A1B00206A57 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82E8256A2A1B00206A57 /* BaseNavViewController.swift */; };
-		1AAC82ED256A2CE500206A57 /* SingerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82EC256A2CE500206A57 /* SingerDetail.swift */; };
+		1AAC82ED256A2CE500206A57 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82EC256A2CE500206A57 /* Playlist.swift */; };
 		1AAC82F1256A2CF400206A57 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82F0256A2CF400206A57 /* Singer.swift */; };
 		1AAC82F4256A2D1000206A57 /* Mv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82F3256A2D1000206A57 /* Mv.swift */; };
-		1AAC82F8256A30D400206A57 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC82F7256A30D400206A57 /* BaseModel.swift */; };
 		1AC686BC256B8B4F0004B0B2 /* SingerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC686BB256B8B4F0004B0B2 /* SingerTableViewCell.swift */; };
 		1AC68711256B94590004B0B2 /* SingerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68710256B94590004B0B2 /* SingerDetailViewController.swift */; };
 		1AC68731256B95790004B0B2 /* MBProgressHUD+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68730256B95790004B0B2 /* MBProgressHUD+Categories.m */; };
@@ -48,10 +47,9 @@
 		1AAC82D3256A279A00206A57 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1AAC82E4256A29E700206A57 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1AAC82E8256A2A1B00206A57 /* BaseNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
-		1AAC82EC256A2CE500206A57 /* SingerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerDetail.swift; sourceTree = "<group>"; };
+		1AAC82EC256A2CE500206A57 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		1AAC82F0256A2CF400206A57 /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
 		1AAC82F3256A2D1000206A57 /* Mv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mv.swift; sourceTree = "<group>"; };
-		1AAC82F7256A30D400206A57 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		1AC686BB256B8B4F0004B0B2 /* SingerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerTableViewCell.swift; sourceTree = "<group>"; };
 		1AC68710256B94590004B0B2 /* SingerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerDetailViewController.swift; sourceTree = "<group>"; };
 		1AC6872F256B95790004B0B2 /* MBProgressHUD+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Categories.h"; sourceTree = "<group>"; };
@@ -134,9 +132,8 @@
 		1A6C8EEE25675E3600D5F480 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				1AAC82F7256A30D400206A57 /* BaseModel.swift */,
 				1AAC82F0256A2CF400206A57 /* Singer.swift */,
-				1AAC82EC256A2CE500206A57 /* SingerDetail.swift */,
+				1AAC82EC256A2CE500206A57 /* Playlist.swift */,
 				1AAC82F3256A2D1000206A57 /* Mv.swift */,
 			);
 			path = Entities;
@@ -343,14 +340,13 @@
 				1AC6874D256BBAE40004B0B2 /* BaseDao.swift in Sources */,
 				1AAC82E9256A2A1B00206A57 /* BaseNavViewController.swift in Sources */,
 				1A6C8EF725675EA400D5F480 /* BaseTabBarViewController.swift in Sources */,
-				1AAC82F8256A30D400206A57 /* BaseModel.swift in Sources */,
 				1AAC82D4256A279A00206A57 /* BaseViewController.swift in Sources */,
 				1AC68731256B95790004B0B2 /* MBProgressHUD+Categories.m in Sources */,
 				1AAC82D1256A278300206A57 /* SettingViewController.swift in Sources */,
 				1AAC82CD256A277100206A57 /* HomeViewController.swift in Sources */,
 				1AC686BC256B8B4F0004B0B2 /* SingerTableViewCell.swift in Sources */,
 				1AC68743256B9B360004B0B2 /* MvDetailViewController.swift in Sources */,
-				1AAC82ED256A2CE500206A57 /* SingerDetail.swift in Sources */,
+				1AAC82ED256A2CE500206A57 /* Playlist.swift in Sources */,
 				1AC68711256B94590004B0B2 /* SingerDetailViewController.swift in Sources */,
 				1AAC82E5256A29E700206A57 /* Utils.swift in Sources */,
 			);
