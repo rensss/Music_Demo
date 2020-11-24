@@ -11,7 +11,7 @@ struct PlaylistDao {
     static func creatTable() {
         BaseDao.dbQueue.inDatabase { (db) in
             do {
-                try db.executeUpdate("CREATE TABLE IF NOT EXISTS PlaylistTable (id integer primary key autoincrement, playlist_id text, playlist_name text, playlist_img_url text, mv_total_count integer, mv_items text)", values: nil)
+                try db.executeUpdate("CREATE TABLE IF NOT EXISTS PlaylistTable (id integer primary key autoincrement, singer_id, playlist_id text, playlist_name text, playlist_img_url text, mv_total_count integer, mv_items text)", values: nil)
                 debugPrint("CREATE PlaylistTable SUCCESS")
             } catch {
                 debugPrint("failed: \(error.localizedDescription)")
@@ -20,24 +20,29 @@ struct PlaylistDao {
     }
     
     // MARK:- 增
-    static func addPlaylist(list: Playlist) -> Bool {
+    static func addPlaylist(singer: Singer?) -> Bool {
         
-        if (self.getPlaylist(playlist_id: list.playlist_id) != nil) {
+        // , let list = playlist.first
+        guard let playlist = singer?.playlists else {
             return true
         }
         
         var result = false
-        BaseDao.dbQueue.inDatabase { (db) in
-            guard let mvData = try? JSONEncoder().encode(list.mv_items) else { return }
-            debugPrint(String(data: mvData, encoding: .utf8)!)
-            
-            do {
-                try db.executeUpdate("INSERT INTO PlaylistTable (playlist_id, playlist_name, playlist_img_url, mv_total_count, mv_items) VALUES (?, ?, ?, ?, ?)", values: [list.playlist_id, list.playlist_name, list.playlist_img_url, list.mv_total_count, mvData])
-                result = true
-            } catch {
-                debugPrint("executeUpdate failed: \(error.localizedDescription)")
+
+        for list in playlist {
+            BaseDao.dbQueue.inDatabase { (db) in
+                guard let mvData = try? JSONEncoder().encode(list.mv_items) else { return }
+                debugPrint(String(data: mvData, encoding: .utf8)!)
+                
+                do {
+                    try db.executeUpdate("INSERT INTO PlaylistTable (singer_id, playlist_id, playlist_name, playlist_img_url, mv_total_count, mv_items) VALUES (?, ?, ?, ?, ?)", values: [list.playlist_id, list.playlist_name, list.playlist_img_url, list.mv_total_count, mvData])
+                    result = true
+                } catch {
+                    debugPrint("executeUpdate failed: \(error.localizedDescription)")
+                }
             }
         }
+        
         
         return result
     }

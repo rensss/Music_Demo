@@ -41,9 +41,10 @@ class SingerDetailViewController: BaseViewController {
                         do {
                             let playlists = try decoder.decode([Playlist].self, from: playlist_items.data(using: .utf8)!)
                             self.mvsArray = playlists
+                            self.singer?.playlists = playlists
                             
                             for list in playlists {
-                                let result = PlaylistDao.addPlaylist(list: list)
+                                let result = PlaylistDao.addPlaylist(singer: self.singer ?? nil)
                                 debugPrint(result)
                             }
                             
