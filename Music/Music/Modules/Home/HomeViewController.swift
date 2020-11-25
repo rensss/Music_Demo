@@ -49,6 +49,8 @@ class HomeViewController: BaseViewController {
                             let singerItems = try decoder.decode([Singer].self, from: singer_items.data(using: .utf8)!)
                             self.dataArray = singerItems
                             self.tableView.reloadData()
+                            
+                            self.encoderSinger(singers: singerItems)
                         } catch {
                             debugPrint("---- \(error)")
                         }
@@ -61,18 +63,35 @@ class HomeViewController: BaseViewController {
 			case .failure(let error):
 				debugPrint(error)
                 
-                // 解析 plist
-                let url = Bundle.main.url(forResource: "Singer", withExtension: "plist")!
-                if let data = try? Data(contentsOf: url), let singerItems = try? PropertyListDecoder().decode([Singer].self, from: data) {
-                    debugPrint(singerItems)
-                    self.dataArray = singerItems
-                    self.tableView.reloadData()
-                }
+                self.dataArray = self.decoderSinger()
+                self.tableView.reloadData()
                 self.tableView.mj_header?.endRefreshing()
                 
 			}
 		}
 	}
+    
+    func encoderSinger(singers: [Singer]) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/Singer.plist"
+        let url = URL(fileURLWithPath: path)
+        do {
+            try PropertyListEncoder().encode(singers).write(to: url)
+        } catch {
+            debugPrint(error)
+        }
+    }
+    
+    func decoderSinger() -> [Singer] {
+        var singers = [Singer]()
+        // 解析 plist
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/Singer.plist"
+        let url = URL(fileURLWithPath: path)
+        if let data = try? Data(contentsOf: url), let singerItems = try? PropertyListDecoder().decode([Singer].self, from: data) {
+            debugPrint(singerItems)
+            singers = singerItems
+        }
+        return singers
+    }
 	
 	// MARK:- getter
     lazy var tableView: UITableView = {

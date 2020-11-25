@@ -29,7 +29,7 @@ class SettingViewController: BaseViewController {
             mailVC.mailComposeDelegate = self
             
             let infoDictionary = Bundle.main.infoDictionary!
-            let appDisplayName: String = infoDictionary["CFBundleDisplayName"] as? String ?? "Best Widgets"  //App 名称
+            let appDisplayName: String = infoDictionary["CFBundleDisplayName"] as? String ?? "Music"  //App 名称
             let majorVersion = infoDictionary["CFBundleShortVersionString"] as? String ?? "1.0" //主程序版本号
             let minorVersion = infoDictionary["CFBundleVersion"] as? String ?? "1001" //版本号（内部标示）
             let iosVersion = UIDevice.current.systemVersion //iOS版本
