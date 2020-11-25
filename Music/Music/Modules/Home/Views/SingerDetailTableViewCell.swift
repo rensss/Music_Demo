@@ -19,11 +19,12 @@ class SingerDetailTableViewCell: UITableViewCell {
         coverImage.autoSetDimensions(to: CGSize(width: 60, height: 60))
         
         contentView.addSubview(playName)
-        playName.autoAlignAxis(.horizontal, toSameAxisOf: contentView, withOffset: -15)
+        playName.autoAlignAxis(.horizontal, toSameAxisOf: contentView, withOffset: -18)
         playName.autoPinEdge(.left, to: .right, of: coverImage, withOffset: 15)
+        playName.autoPinEdge(toSuperviewEdge: .right, withInset: 15)
         
         contentView.addSubview(playCount)
-        playCount.autoAlignAxis(.horizontal, toSameAxisOf: contentView, withOffset: 15)
+        playCount.autoAlignAxis(.horizontal, toSameAxisOf: contentView, withOffset: 18)
         playCount.autoPinEdge(.left, to: .right, of: coverImage, withOffset: 15)
     }
     
@@ -63,6 +64,7 @@ class SingerDetailTableViewCell: UITableViewCell {
     lazy var playName: UILabel = {
         let name = UILabel()
         name.textColor = .black
+        name.numberOfLines = 0
         name.font = UIFont.systemFont(ofSize: 18)
         return name
     }()
