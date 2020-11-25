@@ -29,6 +29,7 @@
 		1AC68749256BB4B40004B0B2 /* MvTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68748256BB4B40004B0B2 /* MvTableViewCell.swift */; };
 		1AC6874D256BBAE40004B0B2 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6874C256BBAE40004B0B2 /* BaseDao.swift */; };
 		1AC68751256BBB070004B0B2 /* PlaylistDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68750256BBB070004B0B2 /* PlaylistDao.swift */; };
+		1AC68789256E03000004B0B2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC68788256E03000004B0B2 /* SettingsTableViewCell.swift */; };
 		6D81BDA87138DBEDA4D3345E /* Pods_Music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920A12C87729923C2B840C53 /* Pods_Music.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		1AC68748256BB4B40004B0B2 /* MvTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvTableViewCell.swift; sourceTree = "<group>"; };
 		1AC6874C256BBAE40004B0B2 /* BaseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
 		1AC68750256BBB070004B0B2 /* PlaylistDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDao.swift; sourceTree = "<group>"; };
+		1AC68788256E03000004B0B2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		571536F6990AB945BDB979D9 /* Pods-Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music.debug.xcconfig"; path = "Target Support Files/Pods-Music/Pods-Music.debug.xcconfig"; sourceTree = "<group>"; };
 		920A12C87729923C2B840C53 /* Pods_Music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		936C1AB7EBACC512DAF042C5 /* Pods-Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music.release.xcconfig"; path = "Target Support Files/Pods-Music/Pods-Music.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		1AAC82CB256A273F00206A57 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				1AC68787256E02ED0004B0B2 /* Views */,
 				1AAC82D0256A278300206A57 /* SettingViewController.swift */,
 			);
 			path = Setting;
@@ -196,6 +199,14 @@
 				1AC68750256BBB070004B0B2 /* PlaylistDao.swift */,
 			);
 			path = Dao;
+			sourceTree = "<group>";
+		};
+		1AC68787256E02ED0004B0B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AC68788256E03000004B0B2 /* SettingsTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A3395F345CEE58949C06E6C2 /* Pods */ = {
@@ -348,6 +359,7 @@
 				1AC68743256B9B360004B0B2 /* MvDetailViewController.swift in Sources */,
 				1AAC82ED256A2CE500206A57 /* Playlist.swift in Sources */,
 				1AC68711256B94590004B0B2 /* SingerDetailViewController.swift in Sources */,
+				1AC68789256E03000004B0B2 /* SettingsTableViewCell.swift in Sources */,
 				1AAC82E5256A29E700206A57 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

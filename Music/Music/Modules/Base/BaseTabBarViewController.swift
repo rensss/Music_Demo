@@ -11,7 +11,7 @@ class BaseTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.delegate = self
-		let titles = ["Home","setting"]
+		let titles = ["Home","Setting"]
 		let vcs = [HomeViewController(),SettingViewController()]
 
 		var navs = [BaseNavViewController]()

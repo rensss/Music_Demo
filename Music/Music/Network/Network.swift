@@ -17,8 +17,8 @@ private let serverTrustPolicies: [String: ServerTrustPolicy] = [
 let configuration: URLSessionConfiguration = {
 	let config = URLSessionConfiguration.default
 	config.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
-	config.timeoutIntervalForRequest = 40
-	config.timeoutIntervalForResource = 40
+	config.timeoutIntervalForRequest = 10
+	config.timeoutIntervalForResource = 10
 	config.requestCachePolicy = .useProtocolCachePolicy
 	return config
 }()

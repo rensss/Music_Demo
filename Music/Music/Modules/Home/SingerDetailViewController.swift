@@ -43,19 +43,16 @@ class SingerDetailViewController: BaseViewController {
                             self.mvsArray = playlists
                             self.singer?.playlists = playlists
                             
-                            for list in playlists {
-                                let result = PlaylistDao.addPlaylist(singer: self.singer ?? nil)
-                                debugPrint(result)
-                            }
-                            
-                            let array = PlaylistDao.getAllPlaylist()
-                            debugPrint(array)
+                            // 写入数据库
+                            let result = PlaylistDao.addPlaylist(singer: self.singer ?? nil)
+                            debugPrint(result)
                             
                             self.tableView.reloadData()
-                            self.tableView.mj_header?.endRefreshing()
                         } catch {
                             debugPrint("---- \(error)")
                         }
+                        
+                        self.tableView.mj_header?.endRefreshing()
                     } else {
                         // 请求失败
                     }
@@ -63,6 +60,10 @@ class SingerDetailViewController: BaseViewController {
                 
             case .failure(let error):
                 debugPrint(error)
+                self.mvsArray = PlaylistDao.getPlaylist(with: self.singer?.id ?? "")
+                self.singer?.playlists = self.mvsArray
+                self.tableView.reloadData()
+                self.tableView.mj_header?.endRefreshing()
             }
         }
     }
@@ -84,6 +85,7 @@ class SingerDetailViewController: BaseViewController {
         cover.layer.cornerRadius = 50
         cover.clipsToBounds = true
         cover.contentMode = .scaleAspectFill
+        cover.backgroundColor = UIColor.withRandom()
         cover.kf.setImage(with: URL(string: self.singer?.img_url ?? ""))
         cover.autoSetDimensions(to: CGSize(width: 100, height: 100))
         cover.autoPinEdge(toSuperviewEdge: .left, withInset: 15)

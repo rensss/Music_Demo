@@ -49,16 +49,27 @@ class HomeViewController: BaseViewController {
                             let singerItems = try decoder.decode([Singer].self, from: singer_items.data(using: .utf8)!)
                             self.dataArray = singerItems
                             self.tableView.reloadData()
-                            self.tableView.mj_header?.endRefreshing()
                         } catch {
                             debugPrint("---- \(error)")
                         }
                     } else {
                         // 请求失败
                     }
+                    
+                    self.tableView.mj_header?.endRefreshing()
                 }
 			case .failure(let error):
 				debugPrint(error)
+                
+                // 解析 plist
+                let url = Bundle.main.url(forResource: "Singer", withExtension: "plist")!
+                if let data = try? Data(contentsOf: url), let singerItems = try? PropertyListDecoder().decode([Singer].self, from: data) {
+                    debugPrint(singerItems)
+                    self.dataArray = singerItems
+                    self.tableView.reloadData()
+                }
+                self.tableView.mj_header?.endRefreshing()
+                
 			}
 		}
 	}
