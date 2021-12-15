@@ -5,12 +5,12 @@ platform :ios, '10.0'
 target 'Music' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for Music
   pod 'R_category'#, '0.0.8'
-	pod 'PureLayout'#, '3.1.6'
-	pod 'FMDB'#, '2.7.5'
-	pod 'MBProgressHUD'#, '1.2.0'
+  pod 'PureLayout'#, '3.1.6'
+  pod 'FMDB'#, '2.7.5'
+  pod 'MBProgressHUD'#, '1.2.0'
   pod 'Moya'#, '13.0.1'
   pod 'Kingfisher'#, '5.7.1'
   pod 'MJRefresh'#, '3.5.0'
@@ -19,6 +19,6 @@ target 'Music' do
   pod 'SnapKit'#, '5.0.1'
   pod 'SDWebImage'#, '5.9.5'
   pod 'HandyJSON'#, '5.0.0'
-	pod 'SwiftyJSON'#, '5.0.0'
-	
+  pod 'SwiftyJSON'#, '5.0.0'
+  
 end
