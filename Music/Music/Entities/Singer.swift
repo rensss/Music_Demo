@@ -8,8 +8,8 @@
 import Foundation
 
 struct Singer: Codable {
-	var id: String
-	var name: String
-	var img_url: String
+      var id: String
+      var name: String
+      var img_url: String
     var playlists: [Playlist]?
 }

@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PlaylistDao.creatTable()
         
         
-		window = UIWindow(frame: UIScreen.main.bounds)
-		window?.backgroundColor = UIColor.white
-		self.window?.rootViewController = BaseTabBarViewController()
-		window?.makeKeyAndVisible()
-		
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
+        self.window?.rootViewController = BaseTabBarViewController()
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

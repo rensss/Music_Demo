@@ -11,36 +11,36 @@ import SwiftyJSON
 let HomeCellIdentifier = "HomeCellIdentifier"
 
 class HomeViewController: BaseViewController {
-	
-	var dataArray: Array<Singer>?
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    
+    var dataArray: Array<Singer>?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.navigationItem.title = "Home"
         view.addSubview(tableView)
         tableView.autoPinEdgesToSuperviewEdges()
-	}
-	
-	// MARK:- func
+    }
+    
+    // MARK:- func
     @objc func refreshAction() {
         getSingerData()
     }
     
     func getSingerData() {
-		NetworkAPIRequest.request(.artist) { (result) in
+        NetworkAPIRequest.request(.artist) { (result) in
             switch result {
             case .success(let response):
                 
-//                do {
-//                    let jsonResult = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
-//                    debugPrint(jsonResult)
-//                } catch {
-//                    debugPrint("---- \(error)")
-//                }
+                //                do {
+                //                    let jsonResult = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+                //                    debugPrint(jsonResult)
+                //                } catch {
+                //                    debugPrint("---- \(error)")
+                //                }
                 
                 let jsonObj = try? JSON(data: response.data)
-//                debugPrint("RECEIPT RESULT: ", jsonObj as Any)
+                //                debugPrint("RECEIPT RESULT: ", jsonObj as Any)
                 if let result = jsonObj?["result"].bool {
                     if result {
                         let singer_items = jsonObj!["singer_items"].rawString() ?? ""
@@ -60,16 +60,16 @@ class HomeViewController: BaseViewController {
                     
                     self.tableView.mj_header?.endRefreshing()
                 }
-			case .failure(let error):
-				debugPrint(error)
+            case .failure(let error):
+                debugPrint(error)
                 
                 self.dataArray = self.decoderSinger()
                 self.tableView.reloadData()
                 self.tableView.mj_header?.endRefreshing()
                 
-			}
-		}
-	}
+            }
+        }
+    }
     
     func encoderSinger(singers: [Singer]) {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! + "/Singer.plist"
@@ -92,8 +92,8 @@ class HomeViewController: BaseViewController {
         }
         return singers
     }
-	
-	// MARK:- getter
+    
+    // MARK:- getter
     lazy var tableView: UITableView = {
         let t = UITableView()
         t.delegate = self
